@@ -36,15 +36,16 @@ int main(int argc, char* argv[]){
 		//couple of questions, did you take your vitamins today? have you showered yet?
 		//okay, how can i help you?
 	}
-	typesOfQuotes relax;
+	typesOfQuotes relaxQuotes;
 	typesOfQuotes self_care;
-	relax.init_quotes();
+	relaxQuotes.init_quotes();
 	self_care.init_quotes();
-	relax.addQuote("It was Thich Nhat Hanh who said...\n\n\tWe humans have lost the wisdom of genuinely resting and relaxing.\n\tWe worry too much.\n\tWe dont allow our bodies to heal,\n\tand we dont allow our minds and hearts to heal.\n\nEnjoy your time to yourself and dont let anyone make you feel bad for it :).");
+	relaxQuotes.setEnum(quoteType::relax);
+	relaxQuotes.populateQuotes();
 	self_care.addQuote("Here's a quote from Nikke Rowe..\n\n\tYou are here, alive and awake \n\tand for whatever reasons you have fought your battles, \n\tit's time to start focusing on what strengths pulled you up \n\twhen the entire world had knocked you down. \n\tThat's where the virtue in self grows.\n\n");
 	while(engaging){
 		std::cin >> input;
-	
+
 		const char * ptr = input.c_str();
 		if(strcmp(ptr, "diary") == 0){
 			std::cout<<quaranBuddy<<"Let it out, big or small, this computer can handle it all <3. When you're done writing, sign your name in this format: ~name\nIt's polite to say goodbye :)..."<< std::endl;
@@ -76,7 +77,16 @@ int main(int argc, char* argv[]){
 		}
 		else if(strcmp(ptr, "activity") == 0){
 			activityLog today;
-			today.initLog("June 8th, 2020");
+			// const char * curr_date = "";
+			// system("date > date.txt");
+			//open file
+			//read file(curr_date, n chars)
+
+
+			// system("date") >> curr_date;	//returns an integer
+			// today.initLog("June 8th, 2020");
+			// today.initLog(curr_date);
+			today.initLog();
 			// head = &today;
 			std::string input;
 			std::cout<<quaranBuddy<<"today's date for your activity log is: "<< today.accessDate()<< '\n' << quaranBuddy <<
@@ -90,7 +100,7 @@ int main(int argc, char* argv[]){
 				std::size_t search = input.find("done");
 				if(strcmp(act, "nothing") == 0){
 				// if(strstr(input, "nothing")){
-					std::cout<<quaranBuddy<< "Awesome!\n"<< relax.retQuote() << std::endl; //randomize "awesome"
+					std::cout<<quaranBuddy<< "Awesome!\n"<< relaxQuotes.retQuote() << std::endl; //randomize "awesome"
 					enteringData = false;
 				}
 				else if(search != std::string::npos){

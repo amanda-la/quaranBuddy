@@ -1,0 +1,21 @@
+Finished items
+- Grabbing correct current date [DONE]
+- working on setting the enum for the quotes file [DONE]
+- randomizing quote that prints out [DONE]
+
+
+Action items
+- developing the database to store previous sessions info 
+- show user how they can interact with application (what options do they have to interact with)
+
+possible additions
+- customizing the size of the shell window that opens up?
+- affirmations section
+
+Current actions
+- activities
+- diary
+
+status (currently working on)
+
+

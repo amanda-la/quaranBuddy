@@ -18,7 +18,10 @@ class activityLog{
 	activityLog * prev;
 	activityLog * next;
 public:
+	void initLog();
 	void initLog(const char*);
+	char* grabDate();
+	void setDate(const char*);
 	void freeAct();
 	char* accessDate();
 	void changeDate();
@@ -31,6 +34,9 @@ public:
 
 activityLog * head;
 activityLog * current;
+
+char* date_file = "date.txt";
+char* curr_date;
 
 bool enteringData;
 
